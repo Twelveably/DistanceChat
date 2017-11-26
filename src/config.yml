@@ -1,0 +1,8 @@
+#Chat distance
+distance: 5
+
+#Enabled message
+enabled: '&aEnabled local chat'
+
+#Disabled message
+disabled: '&cDisabled local chat'
