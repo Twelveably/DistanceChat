@@ -1,0 +1,13 @@
+main: io.github.bagas123.distancechat.Main
+name: DistanceChat
+version: 1.0
+author: BagasMC
+description: 
+commands:
+  local:
+    description: Toggles local chat. 
+    usage: /local
+    permission: local.command
+    permission-message: You don't have the local.command permission.
+
+
