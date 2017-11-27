@@ -8,7 +8,7 @@ Chat with another player in a specified radius.
 
 ## Authors
 
-* **Bagas** - *Initial work* - [PurpleBooth](https://github.com/bagasthebird)
+* **Bagas** - *Initial work* - [BagasTheBird](https://github.com/bagasthebird)
 
 ## License
 
