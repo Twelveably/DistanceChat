@@ -1,6 +1,7 @@
 # DistanceChat
 
-[https://github.com/bagasthebird/DistanceChat/releases/tag/1.0](releases)
+[https://semaphoreci.com/github_hook?hash_id=ebcc50ef-0ae6-42ab-bdb2-3bebbce9887b
+](releases)
 
 Chat with another player in a specified radius.
 
