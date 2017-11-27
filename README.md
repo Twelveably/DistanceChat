@@ -1,5 +1,7 @@
 # DistanceChat
 
+[![npm](https://img.shields.io/npm/v/word-chainer.svg?style=flat-square)](https://www.npmjs.com/package/word-chainer) [![npm](https://img.shields.io/npm/dt/word-chainer.svg?style=flat-square)](https://www.npmjs.com/package/word-chainer)
+
 Chat with another player in a specified radius.
 
 ### Commands
