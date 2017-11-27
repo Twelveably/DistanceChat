@@ -1,6 +1,6 @@
 # DistanceChat
 
-[![npm](https://img.shields.io/npm/v/word-chainer.svg?style=flat-square)](https://www.npmjs.com/package/word-chainer) [![npm](https://img.shields.io/npm/dt/word-chainer.svg?style=flat-square)](https://github.com/bagasthebird/DistanceChat/releases/tag/1.0)
+https://github.com/bagasthebird/DistanceChat/releases
 
 Chat with another player in a specified radius.
 
