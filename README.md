@@ -1,6 +1,6 @@
 # DistanceChat
 
-https://github.com/bagasthebird/DistanceChat/releases/latest
+[![GitHub version](https://badge.fury.io/gh/bagasthebird%2FDistanceChat.svg)](https://badge.fury.io/gh/bagasthebird%2FDistanceChat)
 
 Chat with another player in a specified radius.
 
