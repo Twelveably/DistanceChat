@@ -1,7 +1,6 @@
 # DistanceChat
 
-[https://semaphoreci.com/github_hook?hash_id=ebcc50ef-0ae6-42ab-bdb2-3bebbce9887b
-](releases)
+[![Build Status](https://semaphoreci.com/api/v1/bagasthebird/distancechat/branches/master/badge.svg)](https://semaphoreci.com/bagasthebird/distancechat)
 
 Chat with another player in a specified radius.
 
