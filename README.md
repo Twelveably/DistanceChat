@@ -6,6 +6,8 @@ Chat with another player in a specified radius.
 
 /local - Switch between global/local chat.
 
+##
+
 ## Authors
 
 * **Bagas** - *Initial work* - [BagasTheBird](https://github.com/bagasthebird)
