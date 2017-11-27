@@ -1,6 +1,6 @@
 # DistanceChat
 
-https://github.com/bagasthebird/DistanceChat/releases
+https://github.com/bagasthebird/DistanceChat/tree/1.0
 
 Chat with another player in a specified radius.
 
