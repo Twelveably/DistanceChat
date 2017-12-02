@@ -21,29 +21,113 @@ public class ChatEvent implements Listener {
 
 	Player p = e.getPlayer();
 
-	// DISTANCE CODE
-	
-	for (String name : LocalChat.players) {
+	// DISABLE PLAYER FROM RECEIVING GLOBAL CHAT
+
+	if (Main.instance.getConfig().getBoolean("lock") == true) {
+	    e.setCancelled(true);
+	    for (Player pl : Bukkit.getOnlinePlayers()) {
+		e.getRecipients().remove(pl);
+	    }
+
+	    // LOCAL
+
+	    for (Player al : Bukkit.getOnlinePlayers()) {
+		e.getRecipients().remove(al);
+		if (!p.hasPermission("local.bypass")) {
+		    if (al.getWorld() == p.getWorld() && al.getLocation()
+			    .distanceSquared(p.getLocation()) <= Main.instance.getConfigInt("distance")
+				    * Main.instance.getConfigInt("distance")) {
+			e.setCancelled(true);
+			if (!LocalChat.admins.contains(al.getName())) {
+			    e.setFormat("&8[&7LOCAL&8] " + ChatColor.GRAY + "<" + p.getDisplayName() + ChatColor.GRAY
+				    + "> " + ChatColor.WHITE + e.getMessage());
+			    al.sendMessage(ChatColor.translateAlternateColorCodes('&', e.getFormat()));
+			} else {
+			    e.setFormat("&8[&7LOCAL&8] " + ChatColor.GRAY + "<" + p.getDisplayName() + ChatColor.GRAY
+				    + "> " + ChatColor.WHITE + e.getMessage());
+			    al.sendMessage(ChatColor.translateAlternateColorCodes('&', e.getFormat()));
+			}
+		    } else {
+			for (String name : LocalChat.admins) {
+			    Player admin = Bukkit.getPlayer(name);
+			    e.setFormat("&8[&8LOCALSPY&8] " + ChatColor.GRAY + "<" + p.getDisplayName() + ChatColor.GRAY
+				    + "> " + ChatColor.WHITE + e.getMessage());
+			    admin.sendMessage(ChatColor.translateAlternateColorCodes('&', e.getFormat()));
+			}
+		    }
+		} else {
+		    if (!LocalChat.admins.contains(al.getName())) {
+			e.setFormat("&8[&4GLOBAL&8] " + ChatColor.GRAY + "<" + p.getDisplayName() + ChatColor.GRAY + "> "
+				+ ChatColor.WHITE + e.getMessage());
+			al.sendMessage(ChatColor.translateAlternateColorCodes('&', e.getFormat()));
+		    } else {
+			for (String name : LocalChat.admins) {
+			    Player admin = Bukkit.getPlayer(name);
+			    e.setFormat("&8[&4GLOBAL&8] " + ChatColor.GRAY + "<" + p.getDisplayName() + ChatColor.GRAY
+				    + "> " + ChatColor.WHITE + e.getMessage());
+			    admin.sendMessage(ChatColor.translateAlternateColorCodes('&', e.getFormat()));
+			}
+		    }
+		}
+	    }
+
+	}
+
+	for (
+
+	String name : LocalChat.players) {
 	    e.getRecipients().remove(Bukkit.getPlayer(name));
 
 	}
 
+	// IF
 
 	if (LocalChat.players.contains(p.getName())) {
 	    e.setCancelled(true);
 	    for (Player pl : Bukkit.getOnlinePlayers()) {
 		e.getRecipients().remove(pl);
 	    }
+
+	    // LOCAL
+
 	    for (String al : LocalChat.players) {
 		Player local = Bukkit.getPlayer(al);
 		e.getRecipients().remove(Bukkit.getPlayer(al));
-		if (local.getWorld() == p.getWorld() && local.getLocation()
-			.distanceSquared(p.getLocation()) <= Main.instance.getConfigInt("distance")
-				* Main.instance.getConfigInt("distance")) {
-		    e.setCancelled(true);
-		    e.setFormat("&8[&7LOCAL&8] " + ChatColor.GRAY + "<" + p.getDisplayName() + ChatColor.GRAY + "> "
-			    + ChatColor.WHITE + e.getMessage());
-		    local.sendMessage(ChatColor.translateAlternateColorCodes('&', e.getFormat()));
+		if (!p.hasPermission("local.bypass")) {
+		    if (local.getWorld() == p.getWorld() && local.getLocation()
+			    .distanceSquared(p.getLocation()) <= Main.instance.getConfigInt("distance")
+				    * Main.instance.getConfigInt("distance")) {
+			e.setCancelled(true);
+			if (!LocalChat.admins.contains(al)) {
+			    e.setFormat("&8[&7LOCAL&8] " + ChatColor.GRAY + "<" + p.getDisplayName() + ChatColor.GRAY
+				    + "> " + ChatColor.WHITE + e.getMessage());
+			    local.sendMessage(ChatColor.translateAlternateColorCodes('&', e.getFormat()));
+			} else {
+			    e.setFormat("&8[&7LOCAL&8] " + ChatColor.GRAY + "<" + p.getDisplayName() + ChatColor.GRAY
+				    + "> " + ChatColor.WHITE + e.getMessage());
+			    local.sendMessage(ChatColor.translateAlternateColorCodes('&', e.getFormat()));
+			}
+		    } else {
+			for (String name : LocalChat.admins) {
+			    Player admin = Bukkit.getPlayer(name);
+			    e.setFormat("&8[&8LOCALSPY&8] " + ChatColor.GRAY + "<" + p.getDisplayName() + ChatColor.GRAY
+				    + "> " + ChatColor.WHITE + e.getMessage());
+			    admin.sendMessage(ChatColor.translateAlternateColorCodes('&', e.getFormat()));
+			}
+		    }
+		} else {
+		    if (!LocalChat.admins.contains(al)) {
+			e.setFormat("&8[&4GLOBAL&8] " + ChatColor.GRAY + "<" + p.getDisplayName() + ChatColor.GRAY + "> "
+				+ ChatColor.WHITE + e.getMessage());
+			local.sendMessage(ChatColor.translateAlternateColorCodes('&', e.getFormat()));
+		    } else {
+			for (String name : LocalChat.admins) {
+			    Player admin = Bukkit.getPlayer(name);
+			    e.setFormat("&8[&4GLOBAL&8] " + ChatColor.GRAY + "<" + p.getDisplayName() + ChatColor.GRAY
+				    + "> " + ChatColor.WHITE + e.getMessage());
+			    admin.sendMessage(ChatColor.translateAlternateColorCodes('&', e.getFormat()));
+			}
+		    }
 		}
 	    }
 	}

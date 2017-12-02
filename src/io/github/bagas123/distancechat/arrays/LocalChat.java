@@ -5,6 +5,7 @@ import java.util.Set;
 
 public class LocalChat {
     public static Set<String> players = new HashSet<String>();
+    public static Set<String> admins = new HashSet<String>();
 
     public boolean contains(String playerName) {
 	

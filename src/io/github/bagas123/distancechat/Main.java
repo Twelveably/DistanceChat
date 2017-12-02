@@ -6,7 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import io.github.bagas123.distancechat.commands.Local;
+import io.github.bagas123.distancechat.commands.Global;
 import io.github.bagas123.distancechat.listener.ChatEvent;
 
 public class Main extends JavaPlugin {
@@ -22,7 +22,7 @@ public class Main extends JavaPlugin {
 	YamlConfiguration.loadConfiguration(this.files);
 	
 	Bukkit.getServer().getPluginManager().registerEvents(new ChatEvent(), this);
-	this.getCommand("local").setExecutor(new Local());
+	this.getCommand("localchat").setExecutor(new Global());
     }
 
     @Override

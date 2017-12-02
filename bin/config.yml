@@ -1,8 +1,16 @@
 #Chat distance
-distance: 5
+#The default distance is 20
+distance: 20
 
 #Enabled message
-enabled: '&aEnabled local chat'
+enabled: '&aEnabled local chat.'
 
 #Disabled message
-disabled: '&cDisabled local chat'
+disabled: '&cDisabled local chat.'
+
+#Lock local chat for everyone
+lock: false
+
+#Local chat locked message
+lockmessage: '&cYou are not allowed to disable local chat.'
+
